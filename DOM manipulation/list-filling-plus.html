@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List filling Plus</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" id="nameField">
+        <button id='btnAdd'>Add</button>
+
+        <ul id="nameList">
+
+        </ul>
+    </div>
+
+    <script>
+        var names = ["Diego", "Gabriel", "Lucas"];
+
+        var listElement = document.querySelector('ul#nameList');
+
+        function fillList(values) {
+            listElement.innerHTML = ''
+            for(value of values) {
+                const textElement = document.createTextNode(value);
+                const listItem = document.createElement('li');
+                listItem.appendChild(textElement);
+                listElement.appendChild(listItem);
+            }
+        }
+
+        fillList(names)
+
+        var textName = document.querySelector('input#nameField');
+
+        var btnAdd = document.querySelector('button#btnAdd');
+        btnAdd.onclick = function() {
+            if(textName.value !== '') {
+                names.push(textName.value);
+                fillList(names);
+                textName.value = '';
+            }
+        }
+
+    </script>
+</body>
+</html>
