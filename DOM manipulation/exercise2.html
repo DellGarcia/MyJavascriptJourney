@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2 - Random color generator</title>
+</head>
+<body>
+    <button id="squareGenerator">Create Square</button>
+
+    <div id="container">
+
+    </div>
+
+    <script>
+        var containerElement = document.querySelector('div#container');
+        var btnElement = document.querySelector('button#squareGenerator');
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        btnElement.onclick = function() {
+            let square = document.createElement('div');
+            square.style.display = 'inline-block'
+            square.style.width = '100px';
+            square.style.height = '100px';
+            square.style.backgroundColor = '#FF0000';
+            square.onmouseover = function() {
+                square.style.backgroundColor = getRandomColor();
+            }
+            containerElement.appendChild(square);
+        }
+    </script>
+</body>
+</html>

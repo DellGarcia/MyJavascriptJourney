@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3</title>
+</head>
+<body>
+    <script>
+        function haveSkill(skills) {
+            for(i = 0; i < skills.length; i++) {
+                if(skills[i] === "Javascript")
+                    return true;
+            }
+            return false;
+        }
+
+        var skills = ["Javascript", "ReactJS", "React Native"];
+        console.log(haveSkill(skills));
+
+
+    </script>
+</body>
+</html>

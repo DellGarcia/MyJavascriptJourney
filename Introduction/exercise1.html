@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    
+    
+    <script>
+        //O usuário mora em São Paulo / SP, no bairro Centro, na rua "Rua dos Pinheiros" com nº 1293.
+        function showAdress(adress) {
+            console.log(`O usuario mora em ${adress.cidade}/ ${adress.uf}, no bairro Centro, na rua "${adress.rua}" com nº ${adress.numero}`);
+        }
+
+        var endereco = {
+            rua: "Rua dos pinheiros",
+            numero: 1293,
+            bairro: "Centro",
+            cidade: "São Paulo",
+            uf: "SP"
+        };
+
+        showAdress(endereco);
+
+    </script>
+</body>
+</html>

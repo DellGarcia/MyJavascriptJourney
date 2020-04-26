@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execise 2</title>
+</head>
+<body>
+    <script>
+
+        function showPairs(x, y) {
+            if(y < x) {
+                let back = x;
+                x = y;
+                y = back;
+            }
+            for(i = x; i < y; i++) {
+                if(i % 2 === 0) 
+                    console.log(i);
+            }
+        }
+
+        showPairs(10, 100);
+
+    </script>
+</body>
+</html>
