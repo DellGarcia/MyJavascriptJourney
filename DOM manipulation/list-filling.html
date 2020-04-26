@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3 - List filling</title>
+</head>
+<body>
+    
+    <div id="app">
+        <ul id="nameList">
+
+        </ul>
+    </div>
+
+    <script>
+        var names = ["Diego", "Gabriel", "Lucas"];
+
+        var listElement = document.querySelector('ul#nameList');
+
+        for(name of names) {
+            const textElement = document.createTextNode(name);
+            const listItem = document.createElement('li');
+            listItem.appendChild(textElement);
+            listElement.appendChild(listItem);
+        }
+
+    </script>
+
+</body>
+</html>
