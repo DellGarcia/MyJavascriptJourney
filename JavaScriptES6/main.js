@@ -20,8 +20,13 @@ const filter = arr.filter(function(item) {
 
 console.log(filter);
 
-const find = arr.find((item) => {
+const find = arr.find(item => {
     return item === 4;
 });
 
 console.log(find);
+
+// Arrow function
+const arrow = arr.map(item => item * 2);
+
+console.log(arrow);

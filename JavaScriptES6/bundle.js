@@ -17,4 +17,9 @@ console.log(filter);
 var find = arr.find(function (item) {
   return item === 4;
 });
-console.log(find);
+console.log(find); // Arrow function
+
+var arrow = arr.map(function (item) {
+  return item * 2;
+});
+console.log(arrow);
