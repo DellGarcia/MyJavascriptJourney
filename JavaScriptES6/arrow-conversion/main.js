@@ -1,7 +1,7 @@
 // 3.1
 const arr = [1, 2, 3, 4, 5];
 arr.map(function(item) {
- return item + 10;
+    return item + 10;
 });
 
 // Arrow
@@ -10,7 +10,7 @@ console.log(arr.map(item => item + 10));
 // 3.2
 const usuario = { nome: 'Diego', idade: 23 };
 function mostraIdade(usuario) {
- return usuario.idade;
+    return usuario.idade;
 }
 mostraIdade(usuario);
 
@@ -22,7 +22,7 @@ console.log(showAge(usuario));
 const nome = "Diego";
 const idade = 23;
 function mostraUsuario(nome = 'Diego', idade = 18) {
- return { nome, idade };
+    return { nome, idade };
 }
 mostraUsuario(nome, idade);
 mostraUsuario(nome);
