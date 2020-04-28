@@ -5,7 +5,7 @@ arr.map(function(item) {
 });
 
 // Arrow
-arr.map(item => item + 10);
+console.log(arr.map(item => item + 10));
 
 // 3.2
 const usuario = { nome: 'Diego', idade: 23 };
@@ -16,7 +16,7 @@ mostraIdade(usuario);
 
 // Arrow
 const showAge = usuario => usuario.idade;
-showAge();
+console.log(showAge(usuario));
 
 // 3.3
 const nome = "Diego";
@@ -28,9 +28,9 @@ mostraUsuario(nome, idade);
 mostraUsuario(nome);
 
 // Arrow
-const showUser = (nome = 'Diego', idade = 18) => {nome, idade};
-showUser();
-
+const showUser = (nome = 'Diego', idade = 18) => ({nome, idade});
+console.log(showUser(nome, idade));
+console.log(showUser(nome));
 
 // 3.4
 const promise = function() {
@@ -41,3 +41,4 @@ const promise = function() {
 
 // Arrow
 const arrowPromise = () => new Promise( (resolve,reject) => resolve() );
+console.log(arrowPromise())

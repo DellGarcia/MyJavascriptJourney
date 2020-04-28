@@ -6,9 +6,9 @@ arr.map(function (item) {
   return item + 10;
 }); // Arrow
 
-arr.map(function (item) {
+console.log(arr.map(function (item) {
   return item + 10;
-}); // 3.2
+})); // 3.2
 
 var usuario = {
   nome: 'Diego',
@@ -25,7 +25,7 @@ var showAge = function showAge(usuario) {
   return usuario.idade;
 };
 
-showAge(); // 3.3
+console.log(showAge(usuario)); // 3.3
 
 var nome = "Diego";
 var idade = 23;
@@ -45,10 +45,14 @@ mostraUsuario(nome); // Arrow
 var showUser = function showUser() {
   var nome = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Diego';
   var idade = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 18;
-  nome, idade;
+  return {
+    nome: nome,
+    idade: idade
+  };
 };
 
-showUser(); // 3.4
+console.log(showUser(nome, idade));
+console.log(showUser(nome)); // 3.4
 
 var promise = function promise() {
   return new Promise(function (resolve, reject) {
@@ -62,3 +66,5 @@ var arrowPromise = function arrowPromise() {
     return resolve();
   });
 };
+
+console.log(arrowPromise());
