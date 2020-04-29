@@ -1,14 +1,13 @@
-import axios from 'axios';
+const delay = () => new Promise(resolve => setTimeout(resolve, 1000));
 
-class Api {
-    static async getUser(username) {
-        try {
-            const response = await axios.get(`https://api.github.com/users/${username}`);
-            console.log(response);
-        } catch(err) {
-            console.warn("Erro na Api");
-        }
+async function umPorSegundo() {
+    try {
+        await delay(console.log('1s'));
+        await delay(console.log('2s'));
+        await delay(console.log('3s'));
+    } catch(err) {
+        
     }
 }
 
-Api.getUser('dellgarcia');
+umPorSegundo()
