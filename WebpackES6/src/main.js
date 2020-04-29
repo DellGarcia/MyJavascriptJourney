@@ -1,13 +1,11 @@
 import axios from 'axios';
 
-async function getUserFromGithub(user) {
+const buscaUsuario = usuario => {
     try {
-        const response = await axios.get(`https://api.github.com/users/${user}`);
-        console.log(response.data);
-    } catch(err) {
+        const res = axios.get(`https://api.github.com/users/${usuario}`);
+        console.log(res);
+    } catch (error) {
         console.log('Usuário não existe');
     }
 }
-
-getUserFromGithub('diego3g');
-getUserFromGithub('diego3g124123');
+buscaUsuario('dellgarcia');
