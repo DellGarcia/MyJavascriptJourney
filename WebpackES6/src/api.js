@@ -1,14 +1,7 @@
 import axios from 'axios';
 
-class Api {
-    static async getUser(username) {
-        try {
-            const response = await axios.get(`https://api.github.com/users/${username}`);
-            console.log(response);
-        } catch(err) {
-            console.warn("Erro na Api");
-        }
-    }
-}
+const api = axios.create({
+    baseURL: 'https://api.github.com',
+});
 
-Api.getUser('dellgarcia');
+export default api;
