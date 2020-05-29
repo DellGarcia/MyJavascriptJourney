@@ -1,8 +1,9 @@
 var socket = io('http://localhost:3000')
 
 function renderMessage(message) {
-    const hour = message.date.getHours();
-    const minutes = message.date.getMinutes();
+    const date = new Date(message.date);
+    const hour = date.getHours();
+    const minutes = date.getMinutes();
     $('.messages').append(
         `<div class="message">
             <strong>${message.author}:</strong>
