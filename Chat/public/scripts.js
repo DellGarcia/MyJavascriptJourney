@@ -1,7 +1,17 @@
 var socket = io('http://localhost:3000')
 
 function renderMessage(message) {
-    $('.messages').append(`<div class="message"><strong>${message.author}:</strong> ${message.message}</div>`);
+    const hour = message.date.getHours();
+    const minutes = message.date.getMinutes();
+    $('.messages').append(
+        `<div class="message">
+            <strong>${message.author}:</strong>
+            ${message.message} 
+            <span class="time">
+                <strong>Time: </strong><em>${hour}:${minutes}</em>
+            </span>
+         </div>`
+    );
 }
 
 // Recebe messagens anteriores ao entrar no server
@@ -22,15 +32,19 @@ $('#chat').submit((event) => {
 
     const author = $('input[name=username]').val();
     const message = $('input[name=message]').val();
+    const date = new Date(Date.now());
 
     if (author.length && message.length) {
         const messageObject = {
             author,
             message,
+            date,
         }
 
         renderMessage(messageObject);
 
         socket.emit('sendMessage', messageObject);
+
+        $('input[name=message]').val("")
     }
 })
